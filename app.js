@@ -40,22 +40,23 @@ app.post("/api/notes", function(req, res) {
     res.json(jsonDB);
 });
 
-app.delete('api/notes/:note', function(req, res) {
+app.delete("/api/notes/:id", function(req, res) {
 
-    for (let i = 0; i <= jsonDB.length; i++) {
-        if (jsonDb[i].id === req.params.note.id) {
-            jsonDB = jsonDB.splice(i);
-        }
-    };
-    console.log(jsonDB);
-    fs.writeFileSync('./db/db.json', JSON.stringify(jsonDB), function(err) {
-        if (err) {
-            return err;
+    console.log(req.params.id + "init");
+    for (var i = 0; i < jsonDB.length; i++) {
+        if (req.params.id === jsonDB[i].id) {
+            jsonDB.splice(i, 1);
+
+            fs.writeFile('./db/db.json', JSON.stringify(jsonDB), function(err) {
+                if (err) {
+                    return err;
+                };
+            });
+
+            return res.json(jsonDB);
         };
-    })
-
-    res.json(jsonDB);
-})
+    };
+});
 
 app.listen(PORT, function() {
     console.log("App listening on http://localhost:" + PORT);
