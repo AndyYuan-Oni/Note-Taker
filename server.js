@@ -41,8 +41,6 @@ app.post("/api/notes", function(req, res) {
 });
 
 app.delete("/api/notes/:id", function(req, res) {
-
-    console.log(req.params.id + "init");
     for (var i = 0; i < jsonDB.length; i++) {
         if (req.params.id === jsonDB[i].id) {
             jsonDB.splice(i, 1);
