@@ -6,41 +6,24 @@ SO THAT the user can organize his/her thoughts and keep track of tasks helshe ne
 
 ## Description
 
-This app generate a HTML page according to user input.
+Heroku:https://note-taker-6600.herokuapp.com/
 
-the profile will include the following info:
-* All employee will have name, id, and email.
-* Manager will have office number.
-* Engineer will have github.
-* Intern will have school.
-
-Enter of all the employee info will be inquired and generated.
+This app is already deployed in heroku, the app is a web page with Node.js as server, also using Express to set a series of api routes. You don't need to download to use this app. 
 
 
 
 ## How to Use
 
-Down load the file, open terminal to app.js route.
+Open url given above.
 
-In console, type in:
-```
-npm install
-```
-This is for installing all needed npm. 
+Click button"Get Started" to jump to note taking page.
 
-Then type in:
+In notes page, type in a title of the new note and note content. Then click save icon on the top right corner. New note will be shown on the left area. 
 
-```
-node app.js
-```
-first question will prompr for title, for manager, the following questions will fill up an manager info card, for engineer and intern, a card will be generated as well. until finished all the input, select "Exit" to generate html page. 
-
-It will be generated in output file in the name of team.html.
-
-There is also a demo html in assets file.
+For each notes, there is a red bin icon, click it to delete the note.
 
 ## Demonstrate gif
-![Demo gif](assets/demo.gif)
+![Demo gif](public/assets/demo/demo.gif)
 
 
 
